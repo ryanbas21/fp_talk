@@ -14,3 +14,12 @@ test("Compose should apply functions from right to left", () => {
   expect(compose(inc, multiply(2))(10)).toBe(21);
   expect(compose(multiply(2), inc)(10)).toBe(22);
 });
+
+test("ID Functor", () => {
+  const myFunctor = Id.of(2);
+  const f = n => n + 1;
+  const g = n => n * 2;
+  expect(myFunctor).toHaveProperty("map");
+  expect(myFunctor.map(g).map(f) === myFunctor.map(x => f(g(x)))).toBe(true);
+  // expect(myFunctor.map(inc)).toMatchObject(Id(3));
+});

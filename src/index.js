@@ -14,9 +14,10 @@ const compose = () => () => {};
 // write the Id Functor!
 const Id = () => {};
 
+Id.of = Id;
 module.exports = {
   words: words,
   compose: compose,
   add: add,
-  Id: Id
+  Id: Id.of
 };
