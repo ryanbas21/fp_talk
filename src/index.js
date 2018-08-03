@@ -9,12 +9,19 @@ const add = a => b => a + b;
 // write compose out!
 const compose = (...args) => start =>
   args.reduceRight((acc, fn) => fn(acc), start);
+
 // write the Id Functor!
-const Id = () => {};
+// Identity
+// Composition
+let Id = value => ({
+  map: f => Id(f(value))
+});
+
+Id.of = Id;
 
 module.exports = {
   words: words,
   compose: compose,
   add: add,
-  Id: Id
+  Id: Id.of
 };
