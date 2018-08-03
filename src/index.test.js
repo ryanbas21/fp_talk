@@ -24,4 +24,5 @@ test("ID Functor", () => {
     myFunctor.map(g).map(f).toString() ===
       myFunctor.map(x => f(g(x))).toString()
   ).toBe(true);
+  expect(myFunctor.map(inc).toString()).toBe(Id.of(3).toString());
 });
