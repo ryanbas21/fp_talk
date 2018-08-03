@@ -19,7 +19,7 @@ test("ID Functor", () => {
   const myFunctor = Id.of(2);
   const f = n => n + 1;
   const g = n => n * 2;
-  expect(myFunctor).toHaveProperty("map");
+  expect(myFunctor).toHaveProperty(map);
   expect(
     myFunctor.map(g).map(f).toString() ===
       myFunctor.map(x => f(g(x))).toString()
