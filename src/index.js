@@ -1,12 +1,10 @@
 const { split } = require("ramda");
 
 // Refactor to remove all arguments by partially applying the function
-const words = function(str) {
-  return split(" ", str);
-};
+const words = split(" ");
 
 // write add curried
-const add = () => {};
+const add = a => b => a + b;
 
 // write compose out!
 const compose = () => () => {};
