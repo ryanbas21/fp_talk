@@ -7,8 +7,8 @@ const words = split(" ");
 const add = a => b => a + b;
 
 // write compose out!
-const compose = () => () => {};
-
+const compose = (...args) => start =>
+  args.reduceRight((acc, fn) => fn(acc), start);
 // write the Id Functor!
 const Id = () => {};
 
