@@ -1,0 +1,16 @@
+{
+  "name": "fp_talk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch --silent -b"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^23.4.2",
+    "ramda": "^0.25.0"
+  }
+}
