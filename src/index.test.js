@@ -20,6 +20,9 @@ test("ID Functor", () => {
   const f = n => n + 1;
   const g = n => n * 2;
   expect(myFunctor).toHaveProperty("map");
-  expect(myFunctor.map(g).map(f) === myFunctor.map(x => f(g(x)))).toBe(true);
-  // expect(myFunctor.map(inc)).toMatchObject(Id(3));
+  expect(
+    myFunctor.map(g).map(f).toString() ===
+      myFunctor.map(x => f(g(x))).toString()
+  ).toBe(true);
+  expect(myFunctor.map(inc).toString()).toBe(Id(3).toString());
 });
