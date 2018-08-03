@@ -14,7 +14,7 @@ const compose = (...args) => start =>
 // Identity
 // Composition
 let Id = value => ({
-  map: f => Id(f(value))
+  map: f => Id(f(value)),
 });
 
 Id.of = Id;
